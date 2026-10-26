@@ -35,6 +35,9 @@ echo "Selected project: $selected_dir"
 # Move into selected directory
 cd "$selected_dir" || exit 1
 
+# Set nightly toolchain
+#rustup override set nightly
+
 # Build
 cargo build --target ../atmega328p.json -Zjson-target-spec
 
@@ -70,14 +73,15 @@ fi
 
 DEVICE="${devices[$((choice-1))]}"
 
-echo "Selected device: $DEVICE \nFlashing firmware..."
+#sudo usermod -aG dialout $USER
+
+echo "Selected device: $DEVICE ."
+echo "Flashing firmware..."
 
 # Write on board
 avrdude \
     -p m328p \
     -c arduino \
-    -P /dev/$DEVICE \
+    -P $DEVICE \
     -b 115200 \
     -U flash:w:firmware.hex:i
-
-echo "Flashing on $DEVICE completed!"
