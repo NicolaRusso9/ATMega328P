@@ -26,7 +26,7 @@ Se preferisci una configurazione delle periferiche più semplice e API di livell
 
 Assicurati di aver completato la configurazione di base del sistema:
 
-- 📋 ./Required.md
+- 📋 [Requisiti](Required.md)
 
 ---
 
@@ -139,9 +139,3 @@ blink/
 Una volta creato il progetto, segui le istruzioni contenute in:
 
 - 📖 [Compila & Installa](CompileAndInstall.md)
-
----
-
-## Passaggio successivo
-
-Dopo aver verificato che il progetto venga compilato correttamente, implementa un semplice esempio di lampeggio LED (blink) utilizzando il PAC; questo confermerà che la toolchain, la scheda e la procedura di caricamento del firmware funzionano come previsto.

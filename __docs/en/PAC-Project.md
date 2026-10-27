@@ -138,9 +138,3 @@ blink/
 Once the project has been created, follow the instructions in:
 
 - 📖 [Compile & Install](CompileAndInstall.md)
-
----
-
-## Next Step
-
-After verifying that the project builds correctly, implement a simple LED blinking example using the PAC to confirm that your toolchain, board, and flashing process are working as expected.

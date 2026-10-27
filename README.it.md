@@ -15,6 +15,8 @@ L'obiettivo è offrire un ambiente organizzato per imparare e sperimentare lo sv
 - **PAC (Peripheral Access Crate)**: per l'accesso diretto alle periferiche.
 - **Bare Metal**: programmazione a basso livello per un controllo totale sui registri hardware, senza strati di astrazione.
 
+L'esempio **Blink LED** introduce i tre diversi approcci disponibili per lo sviluppo bare-metal. Una volta coperti questi concetti, non verrà più utilizzato lo sviluppo con HAL in quanto personalmente ritengo che nasconda fin troppo il funzionamento dell'hardware non rendendo chiaro come in realtà funziona.
+
 ---
 
 ## 🚀 Per iniziare

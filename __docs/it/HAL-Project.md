@@ -88,9 +88,3 @@ Una volta creato il progetto, segui le istruzioni contenute in:
 
 - AVR-HAL: https://github.com/Rahix/avr-hal
 - Template AVR-HAL: https://github.com/Rahix/avr-hal-template
-
----
-
-## Passaggio successivo
-
-Dopo aver verificato che il template venga compilato correttamente, prova a modificare il firmware di esempio e caricalo sul tuo Arduino Uno per accertarti che l'intera toolchain funzioni come previsto.

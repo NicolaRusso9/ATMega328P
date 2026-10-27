@@ -15,6 +15,8 @@ The goal is to provide an organized environment for learning and experimenting w
 - **PAC (Peripheral Access Crate)** for direct peripheral access.
 - **Bare Metal** programming for complete control over hardware registers without abstraction layers.
 
+The **Blink LED** example introduces the three different approaches available for bare-metal development. Once these concepts are covered, HAL development will no longer be used since I personally believe it hides too much of how the hardware actually works, making it unclear what’s really going on.
+
 ---
 
 ## 🚀 Getting Started
