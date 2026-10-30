@@ -19,7 +19,7 @@ done
 
 # Require project to build:
 declare -i choice
-read -p "Enter a number of project do you want build:" choice
+read -r -p "Enter a number of project do you want build:" choice
 
 # Input Validation
 if (( choice < 1 || choice > ${#dirs[@]} )); then
@@ -39,12 +39,12 @@ cd "$selected_dir" || exit 1
 #rustup override set nightly
 
 # Build
-cargo build --target ../atmega328p.json -Zjson-target-spec
+cargo build --release --target ../atmega328p.json -Zjson-target-spec
 
 # Generate hex
 avr-objcopy \
     -O ihex \
-    target/atmega328p/debug/$selected_dir.elf \
+    target/atmega328p/release/"$selected_dir".elf \
     firmware.hex
 
 devices=()
@@ -82,6 +82,6 @@ echo "Flashing firmware..."
 avrdude \
     -p m328p \
     -c arduino \
-    -P $DEVICE \
+    -P "$DEVICE" \
     -b 115200 \
     -U flash:w:firmware.hex:i
