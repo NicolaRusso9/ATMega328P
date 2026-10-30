@@ -9,6 +9,8 @@
 ## Panoramica
 
 Questo repository contiene diversi progetti in **Rust** pensati per la piattaforma **Arduino Uno R3 (ATMega328P)**.
+> ⚠️ **Nota:** Questo progetto è un percorso personale di studio. Sto imparando le dinamiche dell'embedded in Rust passo dopo passo e ritengo utile condividere ciò che imparo. Critiche **costruttive** e **suggerimenti per migliorare** sono estremamente graditi!
+
 L'obiettivo è offrire un ambiente organizzato per imparare e sperimentare lo sviluppo di sistemi embedded in Rust, utilizzando diversi livelli di astrazione:
 
 - **HAL (Hardware Abstraction Layer)**: per uno sviluppo più semplice e portabile.
