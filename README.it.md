@@ -77,11 +77,3 @@ ATMega328P/
 ├── atmega328p.json
 └── README.md
 ```
-
----
-
-## 🤝 Contributi
-
-Contributi, miglioramenti, correzioni di bug ed esempi di nuovi progetti sono i benvenuti.
-
-Sentiti libero di aprire una "issue" o di inviare una "pull request".
