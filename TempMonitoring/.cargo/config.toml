@@ -1,0 +1,17 @@
+[build]
+target = "avr-none"
+rustflags = ["-C", "target-cpu=atmega328p"]
+rustdocflags = ["-C", "target-cpu=atmega328p"]
+
+[target.'cfg(target_arch = "avr")']
+runner = "ravedude"
+
+[unstable]
+build-std = ["core", "compiler_builtins"]
+build-std-features = ["compiler-builtins-mem"]
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"

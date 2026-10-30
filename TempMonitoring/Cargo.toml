@@ -1,0 +1,16 @@
+[package]
+name = "TempMonitoring"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+avr-device = { version = "0.9", features = ["atmega328p", "rt"] }
+panic-halt = "1.0"
+heapless = "0.9.3" # for string management on embedded system
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
