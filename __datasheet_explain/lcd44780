@@ -1,0 +1,23 @@
+Power On
+↓
+RS=0 -> Function Set (00101000)
+↓
+RS=0 -> Display ON (00001100)
+↓
+RS=0 -> Entry Mode (00000110)
+↓
+RS=0 -> Clear Display (00000001)
+↓
+RS=1 -> Write 'H' (01101000)  -->   0110          (DB4 to DB7)
+                                    E pulse
+
+                                    1000          (DB4 to DB7)
+                                    E pulse
+↓
+RS=1 -> Write 'e'
+↓
+RS=1 -> Write 'l'
+↓
+RS=1 -> Write 'l'
+↓
+RS=1 -> Write 'o'
