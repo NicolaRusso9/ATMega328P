@@ -80,10 +80,3 @@ ATMega328P/
 └── README.md
 ```
 
----
-
-## 🤝 Contributing
-
-Contributions, improvements, bug fixes, and new project examples are welcome.
-
-Feel free to open an issue or submit a pull request.
