@@ -224,18 +224,18 @@ fn send_nibble(dp: &Peripherals, nibble: u8, rs: bool, rw: bool) {
 pub fn lcd_init(dp: &Peripherals) {
     twi_init(dp);
 
-    // Attesa iniziale per l'accensione dell'LCD (> 40ms)
+    // Initial wait for LCD turn-on temperature monitoring (> 40ms)
     for _ in 0..100 {
         avr_device::asm::delay_cycles(16000); // Circa 1ms a 16MHz
     }
 
-    // Sequenza di reset forzato a 4 bit (come richiesto dal datasheet HD44780)
+    // Forced 4-bit reset sequence (as required by the HD44780 datasheet)
     send_nibble(dp, 0x03, false, false);
     avr_device::asm::delay_cycles(80000); // ~5ms
     send_nibble(dp, 0x03, false, false);
     avr_device::asm::delay_cycles(16000); // ~1ms
     send_nibble(dp, 0x03, false, false);
-    send_nibble(dp, 0x02, false, false); // Imposta la modalità a 4 bit
+    send_nibble(dp, 0x02, false, false); // Set the mode to 4-bit
     avr_device::asm::delay_cycles(16000);       // ~1 ms
 
     // Configurazione standard
