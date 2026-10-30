@@ -9,6 +9,8 @@
 ## Overview
 
 This repository contains multiple **Rust** projects targeting the **Arduino Uno R3 (ATMega328P)** platform.
+> ⚠️ Note: This repository reflects my personal study path in embedded Rust programming. I'm learning as I go and believe in sharing my progress. **Constructive criticism** and **suggestions for improvement** are greatly appreciated!
+
 The goal is to provide an organized environment for learning and experimenting with embedded Rust development using different abstraction levels:
 
 - **HAL (Hardware Abstraction Layer)** for simpler and more portable development.
