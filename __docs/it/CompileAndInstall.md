@@ -122,9 +122,9 @@ ls /dev/ttyUSB*
 
 Controlla che:
 
-- Il cavo USB supporti il ​​trasferimento dati.
+- Il cavo USB supporti il trasferimento dati.
 - Sia selezionata la porta seriale corretta.
-- Il bootloader di Arduino sia presente sul microcontrollore (MCU).
+- Il bootloader di Arduino sia presente sul micro-controllore (MCU).
 
 ---
 
