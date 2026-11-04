@@ -17,9 +17,9 @@
 ///
 /// PORTC0 is configured as an output and driven to GND.
 #[inline(always)]
-pub fn pin_low(port_b: &avr_device::atmega328p::PORTC) {
-    port_b.portc().modify(|_, w| w.pc0().clear_bit());
-    port_b.ddrc().modify(|_, w| w.pc0().set_bit()); // Output
+pub fn pin_low(port_c: &avr_device::atmega328p::PORTC) {
+    port_c.portc().modify(|_, w| w.pc0().clear_bit());
+    port_c.ddrc().modify(|_, w| w.pc0().set_bit()); // Output
 }
 
 /// Release the 1-Wire bus.
@@ -27,9 +27,9 @@ pub fn pin_low(port_b: &avr_device::atmega328p::PORTC) {
 /// PB0 is switched back to input mode and the internal
 /// pull-up resistor is enabled.
 #[inline(always)]
-pub fn pin_release(port_b: &avr_device::atmega328p::PORTC) {
-    port_b.ddrc().modify(|_, w| w.pc0().clear_bit()); // Input
-    port_b.portc().modify(|_, w| w.pc0().set_bit());  // Pull-up interno
+pub fn pin_release(port_c: &avr_device::atmega328p::PORTC) {
+    port_c.ddrc().modify(|_, w| w.pc0().clear_bit()); // Input
+    port_c.portc().modify(|_, w| w.pc0().set_bit());  // Pull-up interno
 }
 
 /// Read the current logic level from the 1-Wire bus.
@@ -53,13 +53,13 @@ pub fn pin_read(pin_b: &avr_device::atmega328p::portc::PINC) -> bool {
 ///
 /// Returns true if a DS18B20 responds.
 pub fn reset(
-    port_b: &avr_device::atmega328p::PORTC,
+    port_c: &avr_device::atmega328p::PORTC,
     pin_b: &avr_device::atmega328p::portc::PINC,
     tc1: &avr_device::atmega328p::TC1
 ) -> bool {
-    pin_low(port_b);
+    pin_low(port_c);
     delay_us(tc1, 480);
-    pin_release(port_b);
+    pin_release(port_c);
     delay_us(tc1, 70);
     let presence = !pin_read(pin_b); // True if the sensor pulls the line down
     delay_us(tc1, 410);
@@ -76,18 +76,18 @@ pub fn reset(
 ///
 /// Timing values follow the DS18B20 datasheet.
 pub fn write_bit(
-    port_b: &avr_device::atmega328p::PORTC,
+    port_c: &avr_device::atmega328p::PORTC,
     tc1: &avr_device::atmega328p::TC1,
     bit: bool
 ) {
-    pin_low(port_b);
+    pin_low(port_c);
     if bit {
         delay_us(tc1, 6);
-        pin_release(port_b);
+        pin_release(port_c);
         delay_us(tc1, 64);
     } else {
         delay_us(tc1, 60);
-        pin_release(port_b);
+        pin_release(port_c);
         delay_us(tc1, 10);
     }
 }
@@ -99,13 +99,13 @@ pub fn write_bit(
 /// The sensor drives the line and the level is sampled
 /// approximately 10 µs later.
 pub fn read_bit(
-    port_b: &avr_device::atmega328p::PORTC,
+    port_c: &avr_device::atmega328p::PORTC,
     pin_b: &avr_device::atmega328p::portc::PINC,
     tc1: &avr_device::atmega328p::TC1
 ) -> bool {
-    pin_low(port_b);
+    pin_low(port_c);
     delay_us(tc1, 2);
-    pin_release(port_b);
+    pin_release(port_c);
     delay_us(tc1, 10);
     let bit = pin_read(pin_b);
     delay_us(tc1, 50);
@@ -114,24 +114,24 @@ pub fn read_bit(
 
 /// Transmit one byte, least-significant bit first (LSB first).
 pub fn write_byte(
-    port_b: &avr_device::atmega328p::PORTC,
+    port_c: &avr_device::atmega328p::PORTC,
     tc1: &avr_device::atmega328p::TC1,
     byte: u8
 ) {
     for i in 0..8 {
-        write_bit(port_b, tc1, (byte & (1 << i)) != 0);
+        write_bit(port_c, tc1, (byte & (1 << i)) != 0);
     }
 }
 
 /// Read one byte, least-significant bit first (LSB first).
 pub fn read_byte(
-    port_b: &avr_device::atmega328p::PORTC,
+    port_c: &avr_device::atmega328p::PORTC,
     pin_b: &avr_device::atmega328p::portc::PINC,
     tc1: &avr_device::atmega328p::TC1
 ) -> u8 {
     let mut byte = 0;
     for i in 0..8 {
-        if read_bit(port_b, pin_b, tc1) {
+        if read_bit(port_c, pin_b, tc1) {
             byte |= 1 << i;
         }
     }
