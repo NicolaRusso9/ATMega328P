@@ -30,6 +30,7 @@ Before building or running any project, make sure your development environment i
 - 📋 [System Requirements](./__docs/en/Required.md)
 - 🔧 [Create a New Project with HAL](./__docs/en/HAL-Project.md)
 - ⚙️ [Create a New Project with PAC](./__docs/en/PAC-Project.md)
+- 🐛 [Debug](./__docs/en/Debug.md)
 
 ---
 

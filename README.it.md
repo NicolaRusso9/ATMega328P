@@ -30,6 +30,7 @@ Prima di compilare o eseguire un progetto, assicurati che il tuo ambiente di svi
 - 📋 [Requisiti di sistema](./__docs/it/Required.md)
 - 🔧 [Creare un nuovo progetto con HAL](./__docs/it/HAL-Project.md)
 - ⚙️ [Creare un nuovo progetto con PAC](./__docs/it/PAC-Project.md)
+- 🐛 [Debug](./__docs/it/Debug.md)
 
 ---
 
